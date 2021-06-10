@@ -5,16 +5,18 @@ import Navbar from './components/Navbar'
 function App() {
 
   const dropdownRef = useRef(null);
-  const [clickedOpen, setClickedOpen] = useState(false)
 
   const removeDropdown = (event) => {
     if(dropdownRef.current.style.display != 'none' && (event.target.classList[0] !== 'white' && event.target.classList[0] !== 'black')){
-      dropdownRef.current.style.display = 'none'
+      dropdownRef.current.style.maxHeight = '0'
+      const closeDropdown = setTimeout(function(){
+        dropdownRef.current.style.display = 'none'
+      }, 1000)
     }
   }
   return (
     <div className="App" onClick={removeDropdown}>
-      <Navbar dropdownRef={dropdownRef} setClickedOpen={setClickedOpen} clickedOpen={clickedOpen}/>
+      <Navbar dropdownRef={dropdownRef}/>
     </div>
   );
 }

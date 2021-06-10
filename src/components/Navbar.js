@@ -3,12 +3,21 @@ import React from 'react'
 const Navbar = (props) => {
 
     const handleDropdown = () => {
-        if(props.dropdownRef.current.style.display != 'none'){
-            props.dropdownRef.current.style.display = 'none'
-        }else{
-            props.dropdownRef.current.style.display = 'block'
+        const dropdown = props.dropdownRef.current
+        if(dropdown.style.display === 'block'){
+            dropdown.style.maxHeight = '0'
+            const closeDropdown = setTimeout(function(){
+                dropdown.style.display = 'none'
+                clearTimeout(closeDropdown)
+            }, 1000)
+            return
         }
-        props.setClickedOpen(!props.clickedOpen)
+
+        dropdown.style.display = 'block'
+        const openDropdown = setTimeout(function(){
+            dropdown.style.maxHeight = '220px'
+            clearTimeout(openDropdown)
+        }, 10)
     }
 
     return(

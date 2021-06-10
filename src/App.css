@@ -47,9 +47,11 @@
 }
 
 .dropdown-options{
-  display: none;
+  transition: max-height 1s;
   top: 50px;
-  width: 220px
+  width: 220px;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .hamburger{
