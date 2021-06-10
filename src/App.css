@@ -1,8 +1,15 @@
+.App{
+  height: 100vh;
+  width: 100vw
+}
+
 * {
   font-family: 'AileronRegular'
 }
 
 .navbar-container{
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 30px;
   display: flex;
@@ -47,6 +54,7 @@
 }
 
 .dropdown-options{
+  display: none;
   transition: max-height 1s;
   top: 50px;
   width: 220px;

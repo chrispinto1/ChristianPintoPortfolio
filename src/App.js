@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import './App.css';
 import Navbar from './components/Navbar'
+import About from "./components/About";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App" onClick={removeDropdown}>
       <Navbar dropdownRef={dropdownRef}/>
+      <About />
     </div>
   );
 }
