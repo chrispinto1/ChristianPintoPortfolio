@@ -19,8 +19,8 @@
 .navbar-container ul{
   display: flex;
   width: 400px;
-  justify-content: space-between;
   padding-right: 30px;
+  margin: 0 !important;
 }
 
 .navbar-container li{
@@ -28,18 +28,35 @@
 }
 
 .navbar-container a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
+  width:100px;
+  height: 50px
+}
+
+.navbar-container a:hover{
+  background-color: #414141
 }
 
 .navbar-container h1{
   font-size: 25px;
   padding-left: 30px;
+  font-weight: 500;
 }
 
 .dropdown-options{
   display: none;
   top: 50px;
   width: 220px
+}
+
+.hamburger{
+  height: 20px;
+  width: 20px;
+  margin-right: 20px;
+  display: none;
 }
 
 .hamburger div{
@@ -55,12 +72,6 @@
   background-color: #1b1b1b;
 }
 
-.hamburger{
-  height: 20px;
-  width: 20px;
-  margin-right: 20px
-}
-
 @media screen and (max-width: 750px){
   .navbar-container ul{
     display: none
@@ -70,8 +81,11 @@
     padding-left: 10px;
   }
 
-  .dropdown-options{
+  .hamburger{
     display: block;
+  }
+
+  .dropdown-options{
     background-color: #1b1b1b;
     position: absolute;
     right: 0;
@@ -85,9 +99,13 @@
     padding: 0;
   }
 
+  .dropdown-options ul a{
+    width: 100%;
+    border-bottom: 1px solid rgb(226, 226, 226)
+  }
+
   .dropdown-options ul li{
     text-align: center;
     padding: 10px 0;
-    border-bottom: 1px solid rgb(226, 226, 226)
   }
 }
