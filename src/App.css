@@ -82,6 +82,54 @@
   background-color: #1b1b1b;
 }
 
+.fade-out{
+  animation: fade-out 2s
+}
+
+.fade-in{
+  z-index: 999;
+  animation: fade-in 2s;
+}
+
+@keyframes fade-out{
+  0%{
+    opacity: 1
+  }
+  100%{
+    opacity: 0.5
+  }
+}
+
+@keyframes fade-in{
+  0%{
+    opacity: 0.5
+  }
+
+  100%{
+    opacity: 1
+  }
+}
+
+.stop-pause-buttons{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -30px;
+  width: 60px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+}
+
+.stop-pause-buttons button:first-of-type:before{
+    content: '\25BA';
+    width: 40px;
+}
+
+.stop-pause-buttons button:last-of-type:before{
+  content: '\2759  \2759'
+}
+
 @media screen and (max-width: 750px){
   .navbar-container ul{
     display: none

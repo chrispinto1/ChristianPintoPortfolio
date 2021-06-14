@@ -1,8 +1,10 @@
+import { Fragment } from 'react'
 import BackgroundSlideShow from './BackgroundSlideShow'
 const AboutMe = () => {
     return(
-        <BackgroundSlideShow />
- 
+        <Fragment>
+            <BackgroundSlideShow />
+        </Fragment>
     )
 }
 
