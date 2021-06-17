@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import hobbies from '../utils/Slideshow'
+import hobbies from '../data/Slideshow'
 import SlideShowButtons from './SlideShowButtons'
 
 const BackgroundSlideShow = () => {
@@ -59,7 +59,7 @@ const BackgroundSlideShow = () => {
     }, [pause, play, currentImageIndex])
 
     return(
-        <picture>
+        <picture style={{display: 'inline-block'}}>
             <SlideShowButtons pause={pause} setPause={setPause} play={play} setPlay={setPlay}/>
             <img ref={backgroundImage} src={hobbies[0].image} style={{width: '100vw', height: 'calc(100vh - 50px)', marginTop: '50px', zIndex: 0}}/>
             <img ref={nextImage} src={hobbies[1].image} style={{width: '100vw', height: 'calc(100vh - 50px)', marginTop: '50px', opacity: 0, top: 0, left: 0, position: 'absolute', zIndex: 99}} />

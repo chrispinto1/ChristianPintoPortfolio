@@ -1,10 +1,11 @@
 .App{
   height: 100vh;
-  width: 100vw
+  width: 100vw;
+  scroll-behavior: smooth;
 }
 
 * {
-  font-family: 'AileronRegular'
+  font-family: 'AileronLight'
 }
 
 .navbar-container{
@@ -17,6 +18,7 @@
   align-items: center;
   background-color: #1b1b1b;
   padding: 10px 0;
+  z-index: 999;
 }
 
 .navbar-container *{
@@ -100,7 +102,7 @@
   top: 50%;
   margin-top: -197.5px;
   background-color: rgb(39, 39, 39);
-  z-index: 999;
+  z-index: 101;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -161,7 +163,7 @@
   width: 60px;
   display: flex;
   justify-content: space-between;
-  z-index: 999;
+  z-index: 100;
 }
 
 .stop-pause-buttons button:first-of-type:before{
@@ -172,6 +174,75 @@
 .stop-pause-buttons button:last-of-type:before{
   content: '\2759  \2759'
 }
+
+.skills-container{
+  height: calc(100vh - 50px);
+  width: 100vw;
+  background-color: #ffdd00ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-container h1{
+  text-decoration: underline;
+  font-family: 'AileronRegular' !important;
+}
+
+.skill{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 80px;
+}
+
+.skill_image{
+  width: 82px;
+  height: 82px;
+}
+
+.skill{
+  padding: 1px
+}
+
+svg{
+  overflow: hidden;
+}
+
+#hex{
+  stroke-width:2;
+  stroke: black
+}
+
+.skill_card{
+  height: 82px;
+  width: 82px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.skill_content {
+  text-align: center;
+  position: relative;
+  transition: transform 1.5s;
+  background-color: green;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: center center;
+}
+
+/* .skill_card:hover .skill_content{
+  transform: rotateY(180deg);
+} */
+
+.skill_back{
+  -webkit-transform-origin: center center;
+  transform: rotateY(.5turn)
+}
+
 
 @media screen and (max-width: 750px){
   .navbar-container ul{
