@@ -228,21 +228,34 @@ svg{
 .skill_content {
   text-align: center;
   position: relative;
-  transition: transform 1.5s;
+  transition: transform 1s;
   background-color: green;
   transform-style: preserve-3d;
   -webkit-transform-origin: center center;
 }
-
-/* .skill_card:hover .skill_content{
-  transform: rotateY(180deg);
-} */
 
 .skill_back{
   -webkit-transform-origin: center center;
   transform: rotateY(.5turn)
 }
 
+.languages{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 500px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills{
+  text-align: center;
+}
+
+.skills h1{
+  text-decoration: underline;
+  font-size: 25px;
+}
 
 @media screen and (max-width: 750px){
   .navbar-container ul{
