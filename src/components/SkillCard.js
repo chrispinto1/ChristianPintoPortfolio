@@ -1,5 +1,3 @@
-import SkillFront from './SkillFront'
-import SkillBack from './SkillBack.js'
 import React from '../images/skills/react.png'
 import { useRef } from 'react'
 
