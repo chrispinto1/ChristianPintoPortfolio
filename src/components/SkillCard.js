@@ -15,10 +15,10 @@ const SkillCard = () => {
     }
 
     const handleUnhover = () => {
-        skillContentRef.current.style.transform = "rotateY(.75turn)"
+        skillContentRef.current.style.transform = "rotateY(.25turn)"
         setTimeout(function(){
             skillBackRef.current.style.display = "none"
-            skillContentRef.current.style.transform = "rotateY(1turn)"
+            skillContentRef.current.style.transform = "rotateY(0turn)"
         }, 1500)
     }
 
