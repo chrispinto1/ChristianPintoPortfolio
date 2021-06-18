@@ -178,7 +178,7 @@
 .skills-container{
   height: calc(100vh - 50px);
   width: 100vw;
-  background-color: #ffdd00ff;
+  background-color: #034ea2ff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -187,6 +187,8 @@
 .skills-container h1{
   text-decoration: underline;
   font-family: 'AileronRegular' !important;
+  color: white;
+  letter-spacing: 1px;
 }
 
 .skill{

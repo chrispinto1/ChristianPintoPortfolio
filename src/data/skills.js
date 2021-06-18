@@ -10,6 +10,12 @@ import NodeJS from '../images/skills/nodejs.png'
 import JQuery from '../images/skills/jquery.png'
 import Bootstrap from '../images/skills/bootstrap.png'
 import SemanticUI from '../images/skills/semanticui.png'
+import Postgresql from '../images/skills/postgresql.png'
+import Mysql from '../images/skills/mysql.png'
+import MongoDB from '../images/skills/mongodb.png'
+import Photoshop from '../images/skills/photoshop.png'
+import Arduino from '../images/skills/arduino.png'
+import RaspberryPI  from '../images/skills/raspberrypi.png'
 
 const languages = [
     {
@@ -79,25 +85,37 @@ const frameworks = [
 
 const databases = [
     {
-        name: 'Postgresql'
+        name: 'Postgresql',
+        color: 'rgb(50,102,144)',
+        image: Postgresql
     },
     {
-        name: 'Mysql'
+        name: 'Mysql',
+        color: 'rgb(0,113,140)',
+        image: Mysql
     },
     {
-        name: 'MongoDB'
+        name: 'MongoDB',
+        color: 'rgb(89,150,54)',
+        image: MongoDB
     },
 ]
 
 const misc = [
     {
-        name: 'Photoshop'
+        name: 'Photoshop',
+        color: 'rgb(0,30,54)',
+        image: Photoshop
     },
     {
-        name: 'Arduino'
+        name: 'Arduino',
+        color: 'rgb(0,150,136)',
+        image: Arduino
     },
     {
-        name: 'Raspberry PI'
+        name: 'RaspberryPI',
+        color: 'rgb(107,192,72)',
+        image: RaspberryPI
     },
 ]
 

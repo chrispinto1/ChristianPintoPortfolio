@@ -3,15 +3,9 @@ import skills from '../data/skills'
 
 const AllSkills = () => {
 
-    const displayLanguages = () => {
-        return skills.languages.map(skill => {
+    const displaySkills = (type) => {
+        return skills[type].map(skill => {
             return <SkillCard name={skill.name} fillColor={skill.color} image={skill.image}/>
-        })
-    }
-
-    const displayFrameWorks = () => {
-        return skills.frameworks.map(skill => {
-            return <SkillCard name={skill.name} fillColor={skill.color} image={skill.image} />
         })
     }
 
@@ -20,20 +14,26 @@ const AllSkills = () => {
             <div>
                 <h1>Languages</h1>
                 <div className="languages skill-container">
-                    {displayLanguages()}
+                    {displaySkills('languages')}
                 </div>
             </div>
             <div>
                 <h1>Frameworks</h1>
                 <div className="frameworks skill-container">
-                    {displayFrameWorks()}
+                    {displaySkills("frameworks")}
                 </div>
             </div>
             <div>
                 <h1>Databases</h1>
+                <div className="frameworks skill-container">
+                    {displaySkills("databases")}
+                </div>
             </div>
             <div>
                 <h1>Misc</h1>
+                <div className="frameworks skill-container">
+                    {displaySkills("misc")}
+                </div>
             </div>
         </div>
     )

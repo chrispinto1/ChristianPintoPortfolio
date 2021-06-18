@@ -35,7 +35,7 @@ const SkillCard = ({name, fillColor, image}) => {
                 <use href="#hex" fill={`url(#${name === 'Ruby on Rails' ? 'ror' : name})`} stroke="0" className="skill_front"/>
                 <g ref={skillBackRef} className="skill_back" style={{display: 'none'}}>
                     <use href="#hex" stroke="2"/>
-                    <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="white">{name}</text>
+                    <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="white" fontWeight="bold">{name}</text>
                 </g>
             </g>
         </svg>
