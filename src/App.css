@@ -239,11 +239,11 @@ svg{
   transform: rotateY(.5turn)
 }
 
-.languages{
+.skill-container{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 500px;
+  width: 600px;
   justify-content: space-between;
   align-items: center;
 }
@@ -256,6 +256,10 @@ svg{
   text-decoration: underline;
   font-size: 25px;
 }
+
+/* .frameworks{
+  width: 600px;
+} */
 
 @media screen and (max-width: 750px){
   .navbar-container ul{

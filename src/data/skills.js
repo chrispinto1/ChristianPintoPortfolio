@@ -3,6 +3,13 @@ import HTML from '../images/skills/html.png'
 import Python from '../images/skills/python.png'
 import Ruby from '../images/skills/ruby.png'
 import CSS from '../images/skills/css.png'
+import React from '../images/skills/react.png'
+import Django from '../images/skills/django.png'
+import Rails from '../images/skills/ror.png'
+import NodeJS from '../images/skills/nodejs.png'
+import JQuery from '../images/skills/jquery.png'
+import Bootstrap from '../images/skills/bootstrap.png'
+import SemanticUI from '../images/skills/semanticui.png'
 
 const languages = [
     {
@@ -34,19 +41,39 @@ const languages = [
 
 const frameworks = [
     {
-        name: 'React'
+        name: 'React',
+        color: 'rgb(34,34,34)',
+        image: React
     },
     {
-        name: 'Django'
+        name: 'Django',
+        color: 'rgb(9,46,32)',
+        image: Django
     },
     {
-        name: 'Ruby on Rails'
+        name: 'Ruby on Rails',
+        color: 'rgb(204,0,0)',
+        image: Rails
     },
     {
-        name: 'NodeJS'
+        name: 'NodeJS',
+        color: 'rgb(131,205,40)',
+        image: NodeJS
     },
     {
-        name: 'JQuery'
+        name: 'JQuery',
+        color: 'rgb(8,104,172)',
+        image: JQuery
+    },
+    {
+        name: 'Bootstrap',
+        color: 'rgb(103,58,183)',
+        image: Bootstrap
+    },
+    {
+        name: 'SemanticUI',
+        color: 'rgb(52,189,178)',
+        image: SemanticUI
     }
 ]
 

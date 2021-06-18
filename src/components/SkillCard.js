@@ -1,6 +1,5 @@
 import React from '../images/skills/react.png'
 import { useRef } from 'react'
-import skills from '../data/skills'
 
 const SkillCard = ({name, fillColor, image}) => {
 
@@ -28,12 +27,12 @@ const SkillCard = ({name, fillColor, image}) => {
         <svg key={name} viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" className="skill_card" onMouseEnter={handleHover} onMouseLeave={handleUnhover}>
             <g viewBox="0 0 100 100" className="skill_content" ref={skillContentRef}>
                 <defs>
-                    <pattern id={name} patternUnits="userSpaceOnUse" width="100" height="100" x="0" y="0" >
+                    <pattern id={name === 'Ruby on Rails' ? 'ror' : name} patternUnits="userSpaceOnUse" width="100" height="100" x="0" y="0" >
                         <image href={image} style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}/>
                     </pattern>
                     <polygon id="hex" points="50 1 95 25 95 75 50 99 5 75 5 25"/>
                 </defs>
-                <use href="#hex" fill={`url(#${name})`} stroke="0" className="skill_front"/>
+                <use href="#hex" fill={`url(#${name === 'Ruby on Rails' ? 'ror' : name})`} stroke="0" className="skill_front"/>
                 <g ref={skillBackRef} className="skill_back" style={{display: 'none'}}>
                     <use href="#hex" stroke="2"/>
                     <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="white">{name}</text>
