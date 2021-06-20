@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import emailjs , { init } from 'emailjs-com';
+import validator from 'validator';
+import MessagePopup from './messagePopup';
 
 const Contact = () => {
 
@@ -11,6 +13,10 @@ const Contact = () => {
         message: ''
     })
     const [sent, setSent] = useState(false)
+    const [emailError, setEmailError] = useState(false)
+    const messageStyles = {
+        
+    }
 
     const handleChange = (event) => {
         const input = event.target
@@ -41,6 +47,13 @@ const Contact = () => {
         })
     }
 
+    const handleEmailValidation = (event) => {
+        if(!validator.isEmail(event.target.value)){
+            setEmailError(true)
+            input.style.boxShadow = '0 0 10px yellow'
+        }
+    }
+
     return(
         <div className="contact-container">
             <h1>Contact</h1>
@@ -54,7 +67,11 @@ const Contact = () => {
             <p>Feel free to send me an email and I'll get back within 24 hours!</p>
             <form className="contact-form">
                 <label>Email</label>
-                <input name="email" onChange={handleChange} placeholder="Email"></input>
+                <input name="email" onChange={handleChange} placeholder="Email" onBlur={handleEmailValidation}></input>
+                {
+                    emailError && 
+                        <MessagePopup styles={messageStyles} message={'Please enter a valid email!'}/>
+                }
                 <label>Subject</label>
                 <input name="subject" onChange={handleChange} placeholder="Subject"/>
                 <label>Message</label>
