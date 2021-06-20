@@ -47,7 +47,6 @@ const BackgroundSlideShow = () => {
                 switchBackgroundImage()
                 setBackgroundImageInterval(backgroundImageInterval)
             },10000)
-
         }
 
         if(pause){

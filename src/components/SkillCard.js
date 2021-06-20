@@ -28,7 +28,7 @@ const SkillCard = ({name, fillColor, image}) => {
             <g viewBox="0 0 100 100" className="skill_content" ref={skillContentRef}>
                 <defs>
                     <pattern id={name === 'Ruby on Rails' ? 'ror' : name} patternUnits="userSpaceOnUse" width="100" height="100" x="0" y="0" >
-                        <image href={image} style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}/>
+                        <image href={image} loading="lazy" style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}/>
                     </pattern>
                     <polygon id="hex" points="50 1 95 25 95 75 50 99 5 75 5 25"/>
                 </defs>

@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar'
 import About from "./containers/About";
 import Skills from './containers/Skills';
+import Contact from './components/Contact';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <Navbar dropdownRef={dropdownRef}/>
       <About />
       <Skills />
+      <Contact />
     </div>
   );
 }
