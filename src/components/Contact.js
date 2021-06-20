@@ -2,20 +2,43 @@ import { useState } from 'react'
 import emailjs , { init } from 'emailjs-com';
 
 const Contact = () => {
-    console.log(process.env.REACT_APP_USER_ID)
+
     init(process.env.USER_ID)
+    
     const [email, setEmail] = useState({
         email: '',
         subject: '',
         message: ''
     })
+    const [sent, setSent] = useState(false)
+
     const handleChange = (event) => {
-        setEmail({...email, [event.target.name] : event.target.value})
+        const input = event.target
+        if(input.style.boxShadow === 'yellow 0px 0px 10px'){
+            input.style.boxShadow = '0 0 3px #000000'
+        }
+        setEmail({...email, [input.name] : input.value})
     }
 
     const sendEmail = (event) => {
         event.preventDefault()
-        emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, email, process.env.REACT_APP_USER_ID)
+        if(!email.email || !email.subject || !email.message){
+            displayErrors()
+        }else{
+            setSent(true)
+            emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, email, process.env.REACT_APP_USER_ID)
+        }
+    }
+
+    const displayErrors = () => {
+        Object.keys(email).forEach(key => {
+            if(!email[key]){
+                const input = document.querySelector(`[name=${key}]`)
+                input.style.boxShadow = '0 0 10px yellow'
+                input.placeholder = `Please fill out the ${key} field`
+                input.classList.add('input-error')
+            }
+        })
     }
 
     return(
@@ -35,8 +58,8 @@ const Contact = () => {
                 <label>Subject</label>
                 <input name="subject" onChange={handleChange} placeholder="Subject"/>
                 <label>Message</label>
-                <textarea onChange={handleChange} placeholder="Message"></textarea>
-                <button onClick={sendEmail}>Send Message</button>
+                <textarea onChange={handleChange} placeholder="Message" name="message"></textarea>
+                <button onClick={sendEmail} disabled={sent}>Send Message</button>
             </form>
         </div>
     )

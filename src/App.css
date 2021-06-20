@@ -326,6 +326,11 @@ svg{
   transform: scale(1)
 }
 
+.input-error::-webkit-input-placeholder{
+  color: red;
+  font-weight: bold;
+}
+
 .contact-form button:hover{
   background-color: #034ea2ff;
 }
