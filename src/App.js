@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import About from "./containers/About";
 import Skills from './containers/Skills';
 import Contact from './components/Contact';
+import Projects from './components/Projects'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
     <div className="App" onClick={removeDropdown}>
       <Navbar dropdownRef={dropdownRef}/>
       <About />
+      <Projects />
       <Skills />
       <Contact />
     </div>

@@ -1,10 +1,10 @@
-import AllSkills from '../components/AllSkills'
+import Skills from '../components/Skills'
 
 const Skills = () => {
     return(
         <div className="skills-container" id="skills">
             <h1>Skills</h1>
-            <AllSkills />
+            <Skills />
         </div>
     )
 }

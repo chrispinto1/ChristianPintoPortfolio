@@ -1,7 +1,7 @@
 import SkillCard from './SkillCard'
 import skills from '../data/skills'
 
-const AllSkills = () => {
+const Skills = () => {
 
     const displaySkills = (type) => {
         return skills[type].map(skill => {
@@ -39,4 +39,4 @@ const AllSkills = () => {
     )
 }
 
-export default AllSkills
+export default Skills
