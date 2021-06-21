@@ -1,7 +1,7 @@
-const MessagePopup = ({message, styles}) => {
+const MessagePopup = ({message, styles, id}) => {
     return (
-        <div className="message-container" style={styles}>
-            <p className="message-text">
+        <div id={id} className="message-container" style={styles}>
+            <p className="message-text" style={{color: styles.color}}>
                 {message}
             </p>
         </div>

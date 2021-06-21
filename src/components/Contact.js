@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import emailjs , { init } from 'emailjs-com';
 import validator from 'validator';
-import MessagePopup from './messagePopup';
+import MessagePopup from './MessagePopup';
 
 const Contact = () => {
 
@@ -14,9 +14,26 @@ const Contact = () => {
     })
     const [sent, setSent] = useState(false)
     const [emailError, setEmailError] = useState(false)
+    const popupRef = useRef(null)
     const messageStyles = {
-        
+        top: 5,
+        left: '50%',
+        marginLeft: '-92.5px',
+        color: 'red',
     }
+
+    useEffect(() => {
+        if(emailError){
+            const popup = document.querySelector('#email')
+            popup.classList.add('popup')
+            setTimeout(function(){
+                popup.classList.add('fade-popup')
+                setTimeout(function(){
+                    setEmailError(false)
+                }, 1500)
+            }, 2000)
+        }
+    }, [emailError])
 
     const handleChange = (event) => {
         const input = event.target
@@ -50,7 +67,7 @@ const Contact = () => {
     const handleEmailValidation = (event) => {
         if(!validator.isEmail(event.target.value)){
             setEmailError(true)
-            input.style.boxShadow = '0 0 10px yellow'
+            event.target.style.boxShadow = '0 0 10px yellow'
         }
     }
 
@@ -67,11 +84,13 @@ const Contact = () => {
             <p>Feel free to send me an email and I'll get back within 24 hours!</p>
             <form className="contact-form">
                 <label>Email</label>
-                <input name="email" onChange={handleChange} placeholder="Email" onBlur={handleEmailValidation}></input>
-                {
-                    emailError && 
-                        <MessagePopup styles={messageStyles} message={'Please enter a valid email!'}/>
-                }
+                <div className="email">
+                    <input name="email" onChange={handleChange} placeholder="Email" onBlur={handleEmailValidation}></input>
+                    {
+                        emailError && 
+                            <MessagePopup id={'email'} styles={messageStyles} message={'Please enter a valid email!'}/>
+                    }
+                </div>
                 <label>Subject</label>
                 <input name="subject" onChange={handleChange} placeholder="Subject"/>
                 <label>Message</label>

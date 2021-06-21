@@ -339,6 +339,47 @@ svg{
   transform: scale(0.9);
 }
 
+.email{
+  width: 100%;
+  position: relative
+}
+
+.email input{
+  width: 100%;
+  max-width: calc(100% - 20px);
+}
+
+.message-container{
+  position: absolute;
+  background-color: rgba(0, 0, 0);
+  padding: 5px;
+  border-radius: 1px;
+  transition: transform 1s;
+  transform: translateY(10px)
+}
+
+.message-container .message-text{
+  font-size: 15px;
+}
+
+.popup{
+  transform: translateY(0px);
+}
+
+.fade-popup{
+  animation: fade-out-popup 1.5s;
+}
+
+@keyframes fade-out-popup {
+  0%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0;
+  }
+}
+
 @media screen and (max-width: 750px){
   .navbar-container ul{
     display: none
