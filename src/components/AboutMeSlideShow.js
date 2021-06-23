@@ -11,12 +11,16 @@ const AboutMeSlideShow = () => {
     const selfImageRef = useRef(null)
     const headingRef = useRef(null)
     const descriptionRef = useRef(null)
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [stopHeader, setStopHeader] = useState(false)
+
+
     const [pause, setPause] = useState(false)
     const [play , setPlay] = useState(true)
     const [interval, setSlideInterval] = useState(null)
     const [currentImageIndex, setCurrentImageIndex] = useState(1)
     const [backgroundInterval ,setBackgroundImageInterval] = useState(null)
-    const [slideText, setSlideText] = useState(aboutMe[0].text)
+    const [slideText, setSlideText] = useState()
 
     // const switchImage = (i) => {
     //     backgroundImage.current.classList.add('fade-out')
@@ -38,6 +42,20 @@ const AboutMeSlideShow = () => {
 
     useEffect(() => {
         showInfo()
+        if(!pause){
+            setTimeout(function(){
+                transition()
+                setTimeout(function(){
+                    if(currentIndex === aboutMe.length - 1){
+                        setCurrentIndex(0)
+                    }else{
+                        setCurrentIndex(currentIndex+1)
+                    }
+                    setStopHeader(true)
+                },2500)
+            }, 5000)
+        }
+        
 
     //     if(!pause && !interval){
     //         let index = currentImageIndex
@@ -69,14 +87,14 @@ const AboutMeSlideShow = () => {
         firstImageRef.current.classList.remove('show-translate')
         secondImageRef.current.classList.remove('show-two')
         thirdImageRef.current.classList.remove('show-translate')
-        selfImageRef.current.classList.remove('show-translate')
-        headingRef.current.classList.remove('show-translate')
         descriptionRef.current.classList.remove('show-translate')
     }
 
     const showInfo = () => {
-        selfImageRef.current.classList.add('show-translate')
-        headingRef.current.classList.add('show-translate')
+        if(!stopHeader){
+            selfImageRef.current.classList.add('show-translate')
+            headingRef.current.classList.add('show-translate')
+        }
         descriptionRef.current.classList.add('show-translate')
         setTimeout(function(){
             firstImageRef.current.classList.add('show-translate')
@@ -88,14 +106,14 @@ const AboutMeSlideShow = () => {
         <div className="about-container">
             <div className="slide-content">
                 <div className="description-container">
-                    <img ref={selfImageRef} src={MainImage} className="self-image hide-self-image"/>
+                    <img ref={selfImageRef} src={MainImage} className="self-image hide-self-image" alt="christian-pinto"/>
                     <h1 ref={headingRef} className="hide-headline"><i>Full Stack Developer | Founder</i></h1>
-                    <p ref={descriptionRef} className="description hide-description">{slideText}</p>
+                    <p ref={descriptionRef} className="description hide-description">{aboutMe[currentIndex].text}</p>
                 </div>
                 <div className="image-container">
-                    <img ref={firstImageRef} className="hide-one" src={aboutMe[0].images[0]} alt={aboutMe[0].altText[0]}/>
-                    <img ref={secondImageRef} className="hide-two" src={aboutMe[0].images[1]} alt={aboutMe[0].altText[1]}/>
-                    <img ref={thirdImageRef} className="hide-three" src={aboutMe[0].images[2]} alt={aboutMe[0].altText[2]}/>
+                    <img ref={firstImageRef} className="hide-one" src={aboutMe[currentIndex].images[0]} alt={aboutMe[currentIndex].altText[0]}/>
+                    <img ref={secondImageRef} className="hide-two" src={aboutMe[currentIndex].images[1]} alt={aboutMe[currentIndex].altText[1]}/>
+                    <img ref={thirdImageRef} className="hide-three" src={aboutMe[currentIndex].images[2]} alt={aboutMe[currentIndex].altText[2]}/>
                 </div>
             </div>
             <SlideShowButtons pause={pause} setPause={setPause} play={play} setPlay={setPlay}/>
