@@ -1,11 +1,9 @@
-import BackgroundSlideShow from '../components/BackgroundSlideShow'
-import Summary from '../components/Summary'
+import AboutMeSlideShow from '../components/AboutMeSlideShow'
 
 const AboutMe = () => {
     return(
         <div id="about">
-            <BackgroundSlideShow />
-            <Summary />            
+            <AboutMeSlideShow />         
         </div>
     )
 }
