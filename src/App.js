@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import About from "./containers/About";
 import Skills from './containers/Skills';
 import Contact from './components/Contact';
-import Projects from './components/Projects'
+import Projects from './containers/Projects'
 
 function App() {
 

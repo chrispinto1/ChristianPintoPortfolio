@@ -370,6 +370,65 @@ svg{
   animation: fade-out-popup 1.5s;
 }
 
+.project-card h1{
+  width: fit-content;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+.project-image{
+  width: 500px;
+  height: 300px;
+}
+
+.slideshow-container{
+  max-width: 500px;
+  position: relative;
+}
+
+.slideshow-container button{
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  padding: 0;
+  background-color:rgba(140, 140, 140, 0.5);
+  border-radius: 5px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.slideshow-container button:hover{
+  transform: scale(1.2);
+}
+
+.prev{
+  left: 8px;
+}
+
+.prev::before{
+  content: '\2190';
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.next{
+  right: 8px
+}
+
+.next::before{
+  content: '\2192';
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}
+
 @keyframes fade-out-popup {
   0%{
     opacity: 1;

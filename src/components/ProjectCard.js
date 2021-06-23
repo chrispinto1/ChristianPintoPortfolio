@@ -1,8 +1,13 @@
 import { useState } from "react"
+import ImageSlideShow from "./ImageSlideShow"
 
-const ProjectCard = ({name, github, website, description}) => {
+const ProjectCard = ({name, github, website, description, images}) => {
     
     const [viewWebPage, setViewWebPage] = useState(false)
+
+    const displayImages = () => {
+            return <ImageSlideShow images={images}/>
+    }
 
     return (
         <div className="project-card">
@@ -11,14 +16,15 @@ const ProjectCard = ({name, github, website, description}) => {
             </a>
             <div className="project-info">
                 <a href={github}>{github? 'Github' : 'Private Repo'}</a>
+                <span> | </span>
                 <a href={website}>Website</a>
             </div>
             <p>{description}</p>
             {
                 viewWebPage ?
-                    <iframe src={website}/>
+                    displayImages()
                     :
-                    <button onClick={() => setViewWebPage(true)}>View Site</button>
+                    <button onClick={() => setViewWebPage(true)}>View Images</button>
             }
         </div>
     )

@@ -12,8 +12,8 @@ const SlideShowButtons = ({pause, setPause, play, setPlay, slideShow, setSlideSh
     
     return(
         <div className="stop-pause-buttons">
-            <button onClick={playSlide} disabled={play}></button>
-            <button onClick={pauseSlide} disabled={pause}></button>
+            <button aria-label="play" onClick={playSlide} disabled={play}></button>
+            <button aria-label="pause" onClick={pauseSlide} disabled={pause}></button>
         </div>
     )
 }

@@ -24,18 +24,18 @@ const Navbar = (props) => {
         <nav className="navbar-container">
             <h1>Christian Pinto</h1>
             <ul>
-                <a href="#about">
-                    <li>About Me</li>
-                </a>
-                <a href="#skills">
-                    <li>Skills</li>
-                </a>
-                <a href="#projects">
-                    <li>Projects</li>
-                </a>
-                <a href="#contact">
-                    <li>Contact</li>
-                </a>
+                <li>
+                    <a href="#about">About Me</a>
+                </li>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
             </ul>
             <div className="hamburger" onClick={handleDropdown}>
                     <div className="white"></div>
