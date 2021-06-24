@@ -10,7 +10,7 @@ const MessagePopup = ({message, styles, id, htmlTag}) => {
             messageRef.current.insertAdjacentHTML('beforeend', htmlTag)
             setCount(1)
         }
-    })
+    }, [htmlTag, count])
 
     return (
         <div id={id} className="message-container" style={styles}>

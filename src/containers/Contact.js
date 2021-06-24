@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import emailjs , { init } from 'emailjs-com';
 import validator from 'validator';
 import MessagePopup from '../components/MessagePopup';
@@ -14,7 +14,6 @@ const Contact = ({contactRef, load}) => {
     })
     const [sent, setSent] = useState(false)
     const [emailError, setEmailError] = useState(false)
-    const popupRef = useRef(null)
     const messageStyles = {
         top: 5,
         left: '50%',
@@ -72,10 +71,10 @@ const Contact = ({contactRef, load}) => {
     }
 
     return(
-        <div ref={contactRef} className="contact-container" data-name="contact">
+        <div ref={contactRef} className="contact-container content" data-name="contact">
             {
                 load &&
-                    <div className="content">
+                    <div>
                         <h1>Contact</h1>
                         <div>
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" space="preserve" width="125" height="100" viewBox="0 0 125 100">

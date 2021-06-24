@@ -10,10 +10,10 @@ const Projects = ({projectsRef, load}) => {
     }
 
     return (
-        <div ref={projectsRef} className="projects-container" data-name="projects">
+        <div ref={projectsRef} className="projects-container content" data-name="projects">
             {
                 load &&
-                    <div className="web-projects content">
+                    <div className="web-projects">
                         {displayProjects('webProjects')}
                     </div>
             }

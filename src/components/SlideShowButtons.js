@@ -24,7 +24,7 @@ const SlideShowButtons = ({pause, setPause, play, setPlay, slideShow, setSlideSh
                 }, 1500)
             }, 2000)
         }
-    }, [pause])
+    }, [pause, play, popup])
 
     const playSlide = () => {
         setPlay(true)

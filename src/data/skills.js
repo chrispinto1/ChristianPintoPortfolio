@@ -119,9 +119,11 @@ const misc = [
     },
 ]
 
-export default {
+const data = {
     languages,
     frameworks,
     databases,
     misc
 }
+
+export default data

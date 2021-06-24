@@ -18,8 +18,10 @@ const piriji = [landing_piriji, initial_screen_piriji, results_piriji]
 const popshop = [landing_popshop, search_popshop, results_popshop]
 const team_randomizer = [landing_team_randomizer, selecting_members_team_randomizer, results_team_randomizer, saved_results_team_randomizer]
 
-export default {
+const data = {
     piriji,
     popshop,
     team_randomizer
 }
+
+export default data

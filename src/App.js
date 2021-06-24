@@ -12,7 +12,6 @@ function App() {
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
   const contactRef = useRef(null);
-  const [loaded, setLoaded]= useState(false)
   const [loadSection, setLoadSection] = useState({
     projects: false,
     skills: false,
@@ -20,16 +19,17 @@ function App() {
   })
 
   useEffect(() => {
-    console.log(loadSection)
       const options = {
-        threshold: 0.2,
+        threshold: 0.01,
       }
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-           if(entry.isIntersecting){
-             if(!loadSection[entry.target.dataset.name])
+           if(entry.isIntersecting && !loadSection[entry.target.dataset.name]){
+                console.log('observer')
                 setLoadSection({...loadSection, [entry.target.dataset.name]: true})
+                entry.target.style.opacity = 1
                 observer.unobserve(entry.target)
+                return
            }else{
              return
            }
@@ -43,9 +43,9 @@ function App() {
   }, [loadSection])
 
   const removeDropdown = (event) => {
-    if(dropdownRef.current.style.display != 'none' && (event.target.classList[0] !== 'white' && event.target.classList[0] !== 'black')){
+    if(dropdownRef.current.style.display !== 'none' && (event.target.classList[0] !== 'white' && event.target.classList[0] !== 'black')){
       dropdownRef.current.style.maxHeight = '0'
-      const closeDropdown = setTimeout(function(){
+      setTimeout(function(){
         dropdownRef.current.style.display = 'none'
       }, 1000)
     }

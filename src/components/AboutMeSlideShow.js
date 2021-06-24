@@ -19,12 +19,11 @@ const AboutMeSlideShow = () => {
     const [play , setPlay] = useState(true)
 
     useEffect(() => {
-        let firstTimeout, secondTimeout
         showInfo()
         if(!pause){
-            firstTimeout = setTimeout(function(){
+            setTimeout(function(){
                 transition()
-                secondTimeout = setTimeout(function(){
+                setTimeout(function(){
                     if(currentIndex === aboutMe.length - 1){
                         setCurrentIndex(0)
                     }else{

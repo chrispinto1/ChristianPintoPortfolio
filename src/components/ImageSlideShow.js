@@ -5,7 +5,7 @@ const ImageSlideShow = ({images}) => {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const displayImage = () => {
-        return <img src={images[currentIndex]} className="project-image"/>
+        return <img src={images[currentIndex]} className="project-image" alt="project-img"/>
     }
 
 

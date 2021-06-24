@@ -65,7 +65,9 @@ const engineeringProjects = [
     }
 ]
 
-export default {
+const data = {
     webProjects,
     engineeringProjects
 }
+
+export default data
