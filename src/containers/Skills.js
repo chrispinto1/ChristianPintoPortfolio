@@ -5,7 +5,7 @@ const Skills = ({skillsRef, load}) => {
         <div ref={skillsRef} className="skills-container" id="skills" data-name="skills">
             {
                 load &&
-                    <div>
+                    <div className="content">
                         <h1>Skills</h1>
                         <SkillsList />
                     </div>

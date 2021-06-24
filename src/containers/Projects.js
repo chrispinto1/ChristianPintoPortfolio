@@ -13,7 +13,7 @@ const Projects = ({projectsRef, load}) => {
         <div ref={projectsRef} className="projects-container" data-name="projects">
             {
                 load &&
-                    <div className="web-projects">
+                    <div className="web-projects content">
                         {displayProjects('webProjects')}
                     </div>
             }

@@ -187,36 +187,6 @@
   opacity: 1;
 }
 
-/* .image-container img{
-  transform: rotateZ(.97turn)
-} */
-
-.summary{
-  position: absolute;
-  width: 800px;
-  height: 390px;
-  left: 50%;
-  margin-left: -430px;
-  top: 50%;
-  margin-top: -197.5px;
-  background-color: rgb(39, 39, 39);
-  z-index: 101;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-top-left-radius: 80%;
-  border-top-right-radius: 80%;
-}
-
-.summary h1{
-  font-size: 15px;
-  color: rgb(32, 32, 32);
-  letter-spacing: 1.1px;
-  color: white;
-}
-
 .self-image{
   border-radius: 50%;
   height: 200px;

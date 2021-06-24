@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import emailjs , { init } from 'emailjs-com';
 import validator from 'validator';
-import MessagePopup from './MessagePopup';
+import MessagePopup from '../components/MessagePopup';
 
 const Contact = ({contactRef, load}) => {
 
@@ -75,32 +75,32 @@ const Contact = ({contactRef, load}) => {
         <div ref={contactRef} className="contact-container" data-name="contact">
             {
                 load &&
-                <div>
-                    <h1>Contact</h1>
-                    <div>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" space="preserve" width="125" height="100" viewBox="0 0 125 100">
-                            <path d="M60,0 l50,0 a10,10 0 0,1 7,17 l-50,50 a10,10 0 0,1 -13,0 l-50,-50 a10,10 0 0,1 7,-17z" stroke="#000" strokeWidth="0" fill="white" />
-                            <path d="M60,90 l54,0 a10,10 0 0,0 7,-7 l0,-60 -50,50 a15,15 0 0,1 -21,0 l-50,-50 0,60 a10,10 0 0,0 7,7z" stroke="#000" strokeWidth="0" fill="white" />  
-                        </svg>
-                        <h3>Have any questions?</h3> 
-                    </div>
-                    <p>Feel free to send me an email and I'll get back within 24 hours!</p>
-                    <form className="contact-form">
-                        <label>Email</label>
-                        <div className="email">
-                            <input name="email" onChange={handleChange} placeholder="Email" onBlur={handleEmailValidation}></input>
-                            {
-                                emailError && 
-                                    <MessagePopup id={'email'} styles={messageStyles} message={'Please enter a valid email!'}/>
-                            }
+                    <div className="content">
+                        <h1>Contact</h1>
+                        <div>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" space="preserve" width="125" height="100" viewBox="0 0 125 100">
+                                <path d="M60,0 l50,0 a10,10 0 0,1 7,17 l-50,50 a10,10 0 0,1 -13,0 l-50,-50 a10,10 0 0,1 7,-17z" stroke="#000" strokeWidth="0" fill="white" />
+                                <path d="M60,90 l54,0 a10,10 0 0,0 7,-7 l0,-60 -50,50 a15,15 0 0,1 -21,0 l-50,-50 0,60 a10,10 0 0,0 7,7z" stroke="#000" strokeWidth="0" fill="white" />  
+                            </svg>
+                            <h3>Have any questions?</h3> 
                         </div>
-                        <label>Subject</label>
-                        <input name="subject" onChange={handleChange} placeholder="Subject"/>
-                        <label>Message</label>
-                        <textarea onChange={handleChange} placeholder="Message" name="message"></textarea>
-                        <button onClick={sendEmail} disabled={sent}>Send Message</button>
-                    </form>
-                </div>
+                        <p>Feel free to send me an email and I'll get back within 24 hours!</p>
+                        <form className="contact-form">
+                            <label>Email</label>
+                            <div className="email">
+                                <input name="email" onChange={handleChange} placeholder="Email" onBlur={handleEmailValidation}></input>
+                                {
+                                    emailError && 
+                                        <MessagePopup id={'email'} styles={messageStyles} message={'Please enter a valid email!'}/>
+                                }
+                            </div>
+                            <label>Subject</label>
+                            <input name="subject" onChange={handleChange} placeholder="Subject"/>
+                            <label>Message</label>
+                            <textarea onChange={handleChange} placeholder="Message" name="message"></textarea>
+                            <button onClick={sendEmail} disabled={sent}>Send Message</button>
+                        </form>
+                    </div>
             }
         </div>
     )

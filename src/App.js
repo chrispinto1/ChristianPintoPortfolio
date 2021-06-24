@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar'
 import About from "./containers/About";
 import Skills from './containers/Skills';
-import Contact from './components/Contact';
+import Contact from './containers/Contact';
 import Projects from './containers/Projects'
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     console.log(loadSection)
       const options = {
-        threshold: 0.01,
+        threshold: 0.2,
       }
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
