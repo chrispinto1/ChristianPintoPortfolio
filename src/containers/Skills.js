@@ -1,10 +1,15 @@
 import SkillsList from '../components/Skills'
 
-const Skills = () => {
+const Skills = ({skillsRef, load}) => {
     return(
-        <div className="skills-container" id="skills">
-            <h1>Skills</h1>
-            <SkillsList />
+        <div ref={skillsRef} className="skills-container" id="skills" data-name="skills">
+            {
+                load &&
+                    <div>
+                        <h1>Skills</h1>
+                        <SkillsList />
+                    </div>
+            }
         </div>
     )
 }

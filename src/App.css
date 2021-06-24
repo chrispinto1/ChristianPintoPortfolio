@@ -470,6 +470,10 @@ svg{
   animation: fade-out-popup 1.5s;
 }
 
+.projects-container{
+  height: calc(100vh - 50px)
+}
+
 .project-card h1{
   width: fit-content;
   display: inline-block;

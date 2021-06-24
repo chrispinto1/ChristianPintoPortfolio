@@ -17,35 +17,14 @@ const AboutMeSlideShow = () => {
 
     const [pause, setPause] = useState(false)
     const [play , setPlay] = useState(true)
-    const [interval, setSlideInterval] = useState(null)
-    const [currentImageIndex, setCurrentImageIndex] = useState(1)
-    const [backgroundInterval ,setBackgroundImageInterval] = useState(null)
-    const [slideText, setSlideText] = useState()
-
-    // const switchImage = (i) => {
-    //     backgroundImage.current.classList.add('fade-out')
-    //     setTimeout(function(){
-    //         backgroundImage.current.src = hobbies[i].image
-    //         nextImage.current.classList.remove('fade-in')
-    //         if(i+1 > hobbies.length - 1)
-    //             nextImage.current.src = hobbies[0].image
-    //         else{
-    //             nextImage.current.src = hobbies[i + 1].image
-    //         }
-    //         backgroundImage.current.classList.remove('fade-out')
-    //     }, 1800)
-    // }
-
-    // const switchBackgroundImage = () => {
-    //     nextImage.current.classList.add('fade-in')
-    // }
 
     useEffect(() => {
+        let firstTimeout, secondTimeout
         showInfo()
         if(!pause){
-            setTimeout(function(){
+            firstTimeout = setTimeout(function(){
                 transition()
-                setTimeout(function(){
+                secondTimeout = setTimeout(function(){
                     if(currentIndex === aboutMe.length - 1){
                         setCurrentIndex(0)
                     }else{
@@ -55,32 +34,6 @@ const AboutMeSlideShow = () => {
                 },2500)
             }, 5000)
         }
-        
-
-    //     if(!pause && !interval){
-    //         let index = currentImageIndex
-    //         const imageTimeout = setInterval(function(){
-    //             switchImage(index)
-    //             index++
-    //             if(index > hobbies.length - 1){
-    //                 index = 0
-    //             }
-    //             setSlideInterval(imageTimeout)
-    //             setCurrentImageIndex(index)
-    //         }, 10000)
-
-    //         const backgroundImageInterval = setInterval(function(){
-    //             switchBackgroundImage()
-    //             setBackgroundImageInterval(backgroundImageInterval)
-    //         },10000)
-    //     }
-
-    //     if(pause){
-    //         clearInterval(interval)
-    //         clearInterval(backgroundInterval)
-    //         setSlideInterval(null)
-    //         setBackgroundImageInterval(null)
-    //     }
     })
 
     const transition = () => {
@@ -117,13 +70,6 @@ const AboutMeSlideShow = () => {
                 </div>
             </div>
             <SlideShowButtons pause={pause} setPause={setPause} play={play} setPlay={setPlay}/>
-            {/* <h1>hello</h1> */}
-            {
-            /* <img ref={backgroundImage} src={hobbies[0].image} style={{width: '100vw', height: 'calc(100vh - 50px)', marginTop: '50px', zIndex: 0}}/>
-            <img ref={nextImage} src={hobbies[1].image} style={{width: '100vw', height: 'calc(100vh - 50px)', marginTop: '50px', opacity: 0, top: 0, left: 0, position: 'absolute', zIndex: 99}} /> 
-            
-            
-            */}
         </div>
     )
 }
