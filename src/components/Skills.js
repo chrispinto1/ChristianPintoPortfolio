@@ -11,30 +11,28 @@ const Skills = () => {
 
     return(
         <div className="skills">
-            <div>
-                <div>
-                    <h1>Languages</h1>
-                    <div className="languages skill-container">
-                        {displaySkills('languages')}
-                    </div>
+            <div className="skill-holder">
+                <h1>Languages</h1>
+                <div className="languages">
+                    {displaySkills('languages')}
                 </div>
-                <div>
-                    <h1>Frameworks</h1>
-                    <div className="frameworks skill-container">
-                        {displaySkills("frameworks")}
-                    </div>
+            </div>
+            <div className="skill-holder">
+                <h1>Frameworks</h1>
+                <div className="frameworks">
+                    {displaySkills("frameworks")}
                 </div>
-                <div>
-                    <h1>Databases</h1>
-                    <div className="frameworks skill-container">
-                        {displaySkills("databases")}
-                    </div>
+            </div>
+            <div className="skill-holder">
+                <h1>Databases</h1>
+                <div className="frameworks">
+                    {displaySkills("databases")}
                 </div>
-                <div>
-                    <h1>Misc</h1>
-                    <div className="frameworks skill-container">
-                        {displaySkills("misc")}
-                    </div>
+            </div>
+            <div className="skill-holder">
+                <h1>Misc</h1>
+                <div className="frameworks">
+                    {displaySkills("misc")}
                 </div>
             </div>
         </div>

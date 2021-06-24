@@ -22,25 +22,28 @@ function App() {
       const options = {
         threshold: 0.15,
       }
+
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
            if(entry.isIntersecting && !loadSection[entry.target.dataset.name]){
-                console.log('observer')
-                setLoadSection({...loadSection, [entry.target.dataset.name]: true})
-                entry.target.style.opacity = 1
-                observer.unobserve(entry.target)
-                return
-           }else{
-             return
+              console.log('observer')
+              entry.target.style.opacity = 1
+              setLoadSection({...loadSection, [entry.target.dataset.name]: true})
            }
         })
       }, options)
-  
+
       const elements = [projectsRef.current, skillsRef.current, contactRef.current]
       elements.forEach(element => {
         observer.observe(element)
       })
-  }, [loadSection])
+
+      return () => {
+        elements.forEach(element => {
+          observer.disconnect(element)
+        })
+      }
+  })
 
   const removeDropdown = (event) => {
     if(dropdownRef.current.style.display !== 'none' && (event.target.classList[0] !== 'white' && event.target.classList[0] !== 'black')){
@@ -50,7 +53,7 @@ function App() {
       }, 1000)
     }
   }
-  
+
   return (
     <div className="App" onClick={removeDropdown}>
       <Navbar dropdownRef={dropdownRef}/>
