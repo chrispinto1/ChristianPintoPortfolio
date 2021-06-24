@@ -9,17 +9,21 @@ const SkillCard = ({name, fillColor, image}) => {
     const handleHover = () => {
         skillContentRef.current.style.transform = "rotateY(.25turn)"
         setTimeout(function(){
-            skillBackRef.current.style.display = "block"
-            skillBackRef.current.style.fill = `${fillColor}`
-            skillContentRef.current.style.transform = "rotateY(.5turn)"
+            if(skillBackRef.current){
+                skillBackRef.current.style.display = "block"
+                skillBackRef.current.style.fill = `${fillColor}`
+                skillContentRef.current.style.transform = "rotateY(.5turn)"
+            }
         }, 1000)
     }
 
     const handleUnhover = () => {
         skillContentRef.current.style.transform = "rotateY(.25turn)"
         setTimeout(function(){
-            skillBackRef.current.style.display = "none"
-            skillContentRef.current.style.transform = "rotateY(0turn)"
+            if(skillBackRef.current){
+                skillBackRef.current.style.display = "none"
+                skillContentRef.current.style.transform = "rotateY(0turn)"
+            }
         }, 1000)
     }
 

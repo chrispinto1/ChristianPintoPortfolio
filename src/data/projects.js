@@ -7,7 +7,8 @@ const webProjects = [
         link: 'https://www.piriji.com',
         thirdPartyAPIs: 'Mapbox / Paypal / Google Reverse Geocoding (Mobile App)',
         mobileLink: '',
-        description: 'Pirji is a web and mobile app that allows you to find bars that have happy hour specials. It is currently specific to NYC only aat the moment with the outlook of expanding beyond NYC',
+        role: 'Founder / Full Stack Developer / Mobile Developer',
+        description: 'Pirji is a web and mobile app that allows you to find bars that have happy hour specials. It is currently specific to NYC only at the moment with the outlook of expanding beyond NYC',
         images: images['piriji']
     },
     {
@@ -15,6 +16,7 @@ const webProjects = [
         builtWith: 'Django / Python / Javascript / HTML / CSS / JQuery / Postgresql',
         link: 'https://www.popshop.com/',
         thirdPartyAPIs: 'Google Maps / Stripe / Plaid / Owl Carousel',
+        role: 'Full Stack Developer',
         description: 'Popshop is an app that allows you to book retail spaces to have your own brick and motar store. We utilize google maps to display and recommend spaces to business owners who may want to take their virutal buisness to a physical space.',
         images: images['popshop']
     },
@@ -24,17 +26,18 @@ const webProjects = [
         link: 'https://chrispinto1.github.io/Team-Ramdomizer/',
         github: 'https://github.com/chrispinto1/Team-Ramdomizer',
         thirdPartyAPIs: 'LOVO Voice API',
+        role: 'Developer',
         description: 'An app that puts teams into groups randomly with animations and voice overs. It will save the result to local storage so on the next visit it will display the saved groups for future references.',
         images: images['team_randomizer']
     },
-    {
-        name: 'Portfolio',
-        builtWith: 'React / CSS',
-        link: '',
-        github: 'https://github.com/chrispinto1/ChristianPintoPortfolio',
-        thirdPartyAPIs: 'EmailJS',
-        description: 'My personal portfolio'
-    }
+    // {
+    //     name: 'Portfolio',
+    //     builtWith: 'React / CSS',
+    //     link: '',
+    //     github: 'https://github.com/chrispinto1/ChristianPintoPortfolio',
+    //     thirdPartyAPIs: 'EmailJS',
+    //     description: 'My personal portfolio'
+    // }
 ]
 
 const engineeringProjects = [

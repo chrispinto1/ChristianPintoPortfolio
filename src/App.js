@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
       const options = {
-        threshold: 0.01,
+        threshold: 0.15,
       }
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -50,6 +50,7 @@ function App() {
       }, 1000)
     }
   }
+  
   return (
     <div className="App" onClick={removeDropdown}>
       <Navbar dropdownRef={dropdownRef}/>
