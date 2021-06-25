@@ -1,5 +1,5 @@
 import Nature from '../images/about/nature.jpg'
-import Graspop from '../images/about/graspop.png'
+import Graspop from '../images/about/graspop.jpg'
 import Biking from '../images/about/biking.jpg'
 
 import Ecuador from '../images/about/ecuador-flag.jpeg'
