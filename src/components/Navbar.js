@@ -1,4 +1,6 @@
 import React from 'react'
+import Github from '../images/contact/github.png'
+import Linkedin from '../images/contact/linkedin.png'
 
 const Navbar = (props) => {
 
@@ -24,7 +26,12 @@ const Navbar = (props) => {
         <nav className="navbar-container">
             <h1>Christian Pinto</h1>
             <div className="personal-links">
-                
+                <a href="https://github.com/chrispinto1" target="_blank" rel="noreferrer">
+                    <img src={Github} alt="Github"/>
+                </a>
+                <a href="https://www.linkedin.com/in/christian-pinto1/" target="_blank" rel="noreferrer">
+                    <img src={Linkedin} alt="Linkedin"/>
+                </a>
             </div>
             <ul>
                 <li>

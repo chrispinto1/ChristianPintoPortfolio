@@ -46,7 +46,24 @@
   height: 50px
 }
 
-.navbar-container a:hover{
+.personal-links{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  margin-left: -45px;
+}
+
+.personal-links a{
+  width: 45px;
+}
+
+.personal-links img{
+  width: 30px;
+  height: 30px;
+}
+
+.navbar-container li a:hover{
   background-color: #414141
 }
 
@@ -651,19 +668,7 @@ svg{
   }
 }
 
-@media screen and (max-width: 750px){
-  .navbar-container ul{
-    display: none
-  }
-
-  .navbar-container h1{
-    padding-left: 10px;
-  }
-
-  .hamburger{
-    display: block;
-  }
-
+@media screen and (max-width: 925px){
   .dropdown-options{
     background-color: #1b1b1b;
     position: absolute;
@@ -688,17 +693,35 @@ svg{
     padding: 10px 0;
   }
 
-  .image-container{
-    height: 160px;
-  }
-
   .description-container{
     width: 95%;
     margin: 0 auto
   }
+
+  .navbar-container ul{
+    display: none
+  }
+
+  .navbar-container h1{
+    padding-left: 10px;
+  }
+
+  .hamburger{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .image-container{
+    height: 160px;
+  }
 }
 
 @media screen and (max-width: 625px){
+  .personal-links{
+    margin-left: 3%;
+  }
+
   .form-container{
     width: 95%;
   }

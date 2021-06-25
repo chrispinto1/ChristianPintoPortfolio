@@ -64,7 +64,7 @@ const ContactForm = () => {
     }
 
     const handleEmailValidation = (event) => {
-        if(!validator.isEmail(event.target.value) && event.target.value != ''){
+        if(!validator.isEmail(event.target.value) && event.target.value !== ''){
             setEmailError(true)
             event.target.style.boxShadow = '0 0 10px red'
         }
