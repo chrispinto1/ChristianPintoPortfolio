@@ -59,7 +59,7 @@ const AboutMeSlideShow = () => {
             <div className="slide-content">
                 <div className="description-container">
                     <img ref={selfImageRef} src={MainImage} className="self-image hide-self-image" alt="christian-pinto"/>
-                    <h1 ref={headingRef} className="hide-headline"><i>Full Stack Developer | Founder</i></h1>
+                    <h1 ref={headingRef} className="hide-headline">Full Stack Developer | Founder</h1>
                     <p ref={descriptionRef} className="description hide-description">{aboutMe[currentIndex].text}</p>
                 </div>
                 <div className="image-container">

@@ -23,6 +23,9 @@ const Navbar = (props) => {
     return(
         <nav className="navbar-container">
             <h1>Christian Pinto</h1>
+            <div className="personal-links">
+                
+            </div>
             <ul>
                 <li>
                     <a href="#about">About Me</a>
