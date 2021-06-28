@@ -668,6 +668,12 @@ svg{
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .project-card .project-description{
+    height: fit-content
+  }
+}
+
 @media screen and (max-width: 925px){
   .dropdown-options{
     background-color: #1b1b1b;
