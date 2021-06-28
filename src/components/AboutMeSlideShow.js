@@ -31,7 +31,7 @@ const AboutMeSlideShow = () => {
                     }
                     setStopHeader(true)
                 },2500)
-            }, 5000)
+            }, 12000)
         }
     })
 

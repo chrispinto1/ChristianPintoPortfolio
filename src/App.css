@@ -156,7 +156,7 @@
 
 .image-container{
   position: absolute;
-  height: 250px;
+  height: 200px;
   width: calc(100% - 60px);
   bottom: 70px;
   left: 0;
@@ -200,7 +200,7 @@
 }
 
 .show-translate{
-  transform: translateX(0%);
+  transform: translateX(0%) !important;
 }
 
 .show-two{
@@ -743,6 +743,14 @@ svg{
     height: 130px;
   }
 
+  .hide-one{
+    transform: translateX(-150%);
+  }
+
+  .hide-three{
+    transform: translateX(150%);
+  }
+
   .description-container h1{
     margin-top: 20px;
     font-size: 25px;
@@ -760,5 +768,61 @@ svg{
 
   .description-container p{
     font-size: 16px;
+  }
+
+}
+
+@media screen and (max-width: 450px) and (max-height: 790px){
+  .about-container{
+    align-items: flex-start;
+  }
+
+  .slide-content{
+    margin-top: 40px;
+  }
+
+  .image-container{
+    bottom: 50px;
+  }
+
+  .self-image{
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-height: 815px) {
+  .about-container{
+    align-items: flex-start;
+  }
+
+  .slide-content{
+    margin-top: 20px;
+  }
+
+  .image-container{
+    bottom: 40px;
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .self-image{
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-height: 600px){
+  .slide-content{
+    margin-top: 20px;
+  }
+
+  .image-container{
+    bottom: 40px;
+  }
+
+  .self-image{
+    width: 130px;
+    height: 140px;
   }
 }
