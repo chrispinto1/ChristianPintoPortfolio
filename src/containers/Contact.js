@@ -3,7 +3,7 @@ import ContactForm from '../components/ContactForm';
 const Contact = ({contactRef, load}) => {
 
     return(
-        <div ref={contactRef} className="contact-container content" data-name="contact">
+        <div ref={contactRef} className="contact-container content" data-name="contact" id="contact">
             {
                 load &&
                     <div className="form-container">

@@ -22,7 +22,7 @@ function App() {
 
   useEffect(() => {
       const options = {
-        threshold: 0.15,
+        threshold: new Array(101).fill(0).map((v, i) => i * 0.01),
       }
 
       const observer = new IntersectionObserver((entries, observer) => {
