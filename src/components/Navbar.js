@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import Github from '../images/contact/github.png'
 import Linkedin from '../images/contact/linkedin.png'
 
@@ -32,8 +32,11 @@ const Navbar = (props) => {
                 <a href="https://www.linkedin.com/in/christian-pinto1/" target="_blank" rel="noreferrer">
                     <img src={Linkedin} alt="Linkedin"/>
                 </a>
+                <button className="resume-button" onClick={() => {props.setViewResume(true);document.body.style.overflow = "hidden";}}>
+                    R
+                </button>
             </div>
-            <ul>
+            <ul className="options">
                 <li>
                     <a href="#about">About Me</a>
                 </li>

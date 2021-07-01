@@ -5,6 +5,7 @@ import About from "./containers/About";
 import Skills from './containers/Skills';
 import Contact from './containers/Contact';
 import Projects from './containers/Projects'
+import Resume from './containers/Resume'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
   const contactRef = useRef(null);
+  const [viewResume, setViewResume] = useState(false)
   const [loadSection, setLoadSection] = useState({
     projects: false,
     skills: false,
@@ -56,11 +58,15 @@ function App() {
 
   return (
     <div className="App" onClick={removeDropdown}>
-      <Navbar dropdownRef={dropdownRef}/>
+      <Navbar dropdownRef={dropdownRef} setViewResume={setViewResume}/>
       <About />
       <Projects projectsRef={projectsRef} load={loadSection.projects}/>
       <Skills skillsRef={skillsRef} load={loadSection.skills}/>
       <Contact contactRef={contactRef} load={loadSection.contact}/>
+      {
+        viewResume && 
+          <Resume setViewResume={setViewResume}/>
+      }
     </div>
   );
 }

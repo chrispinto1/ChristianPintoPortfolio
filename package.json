@@ -8,7 +8,10 @@
     "@testing-library/user-event": "^12.8.3",
     "emailjs-com": "^3.1.0",
     "react": "^17.0.2",
+    "react-doc-viewer": "^0.1.5",
     "react-dom": "^17.0.2",
+    "react-file-viewer": "^1.2.1",
+    "react-pdf": "^5.3.0",
     "react-scripts": "4.0.3",
     "validator": "^13.6.0",
     "web-vitals": "^1.1.2"

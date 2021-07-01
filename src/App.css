@@ -63,6 +63,74 @@
   height: 30px;
 }
 
+.resume-button{
+  width: 30px;
+  height: 30px;
+  background-color: #000000;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.resume-modal{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: scroll
+}
+
+.resume-modal .buttons{
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.resume-modal .download-options{
+  position: absolute;
+  top: 25px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  width: 79.97px;
+}
+
+.resume-modal button,.resume-modal a{
+  background-color: rgba(0,0,0,0.8);
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.resume-modal a{
+  text-decoration: none;
+  text-align: center;
+}
+
+.react-pdf__Document{
+  width: 600px;
+  height: 90%;
+}
+
+.react-pdf__Page__canvas, .react-pdf__Page{
+  width: 100% !important;
+}
+
+.react-pdf__Page__annotations.annotationLayer{
+  display: none;
+}
+
 .navbar-container li a:hover{
   background-color: #414141
 }
@@ -80,6 +148,28 @@
   width: 220px;
   max-height: 0;
   overflow: hidden;
+  background-color: #1b1b1b;
+  position: absolute;
+  right: 0;
+  z-index: 999;
+}
+
+.dropdown-options ul{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-options ul a{
+  width: 100%;
+  border-bottom: 1px solid rgb(226, 226, 226)
+}
+
+.dropdown-options ul li{
+  text-align: center;
+  padding: 10px 0;
 }
 
 .hamburger{
@@ -674,42 +764,9 @@ svg{
   }
 }
 
-@media screen and (max-width: 925px){
-  .dropdown-options{
-    background-color: #1b1b1b;
-    position: absolute;
-    right: 0;
-  }
-
-  .dropdown-options ul{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .dropdown-options ul a{
-    width: 100%;
-    border-bottom: 1px solid rgb(226, 226, 226)
-  }
-
-  .dropdown-options ul li{
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  .description-container{
-    width: 95%;
-    margin: 0 auto
-  }
-
-  .navbar-container ul{
+@media screen and (max-width: 990px){
+  .navbar-container .options{
     display: none
-  }
-
-  .navbar-container h1{
-    padding-left: 10px;
   }
 
   .hamburger{
@@ -717,15 +774,36 @@ svg{
   }
 }
 
+@media screen and (max-width: 925px){
+  .description-container{
+    width: 95%;
+    margin: 0 auto
+  }
+
+  .navbar-container h1{
+    padding-left: 10px;
+  }
+}
+
 @media screen and (max-width: 750px){
   .image-container{
     height: 160px;
+  }
+
+  .react-pdf__Document {
+    width: 600px;
+    height: 85%;
   }
 }
 
 @media screen and (max-width: 625px){
   .personal-links{
     margin-left: 3%;
+  }
+
+  .react-pdf__Document {
+    width: 480px;
+    height: 70%;
   }
 
   .form-container{
