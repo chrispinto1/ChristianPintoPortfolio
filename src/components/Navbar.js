@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Github from '../images/contact/github.png'
 import Linkedin from '../images/contact/linkedin.png'
 
